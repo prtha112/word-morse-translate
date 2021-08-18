@@ -1,5 +1,6 @@
 const wordToMorse = (word: string) => {
-  switch(word){
+  const wordChar: string = word.toUpperCase()
+  switch(wordChar){
     case('A'):
       return '.-'
       break
@@ -12,15 +13,93 @@ const wordToMorse = (word: string) => {
     case('D'):
       return '-..'
       break
+    case('E'):
+      return '.'
+      break
+    case('F'):
+      return '..-.'
+      break
+    case('G'):
+      return '--.'
+      break
+    case('H'):
+      return '....'
+      break
+    case('I'):
+      return '..'
+      break
+    case('J'):
+      return '.---'
+      break
+    case('K'):
+      return '-.-'
+      break
+    case('L'):
+      return '.-..'
+      break
+    case('M'):
+      return '--'
+      break
+    case('N'):
+      return '-.'
+      break
+    case('O'):
+      return '---'
+      break
+    case('P'):
+      return '.--.'
+      break
+    case('Q'):
+      return '--.-'
+      break
+    case('R'):
+      return '.-.'
+      break
+    case('S'):
+      return '...'
+      break
+    case('T'):
+      return '-'
+      break
+    case('U'):
+      return '..-'
+      break
+    case('V'):
+      return '...-'
+      break
+    case('W'):
+      return '.--'
+      break 
+    case('X'):
+      return '-..-'
+      break
+    case('Y'):
+      return '-.--'
+      break
+    case('Z'):
+      return '--..'
+      break
+    case(' '):
+      return ' '
+      break
+    default:
+      return ''
+      break
   }
 }
 
-const word: string = "ABC"
-
-let i: number = word.length;
-var morse: string = ''
-while (i--) {
-  morse = morse + wordToMorse(word[i]) + ' '
+const wordCharToMorse = (wordInput: string) => {
+  const word: string = wordInput
+  let n: number = word.length;
+  let morse: string = ''
+  for (let i: number = 0; i < n; i++){
+    if (i == n) {
+      morse = morse + wordToMorse(word[i]) 
+    }else{
+      morse = morse + wordToMorse(word[i]) + ' '
+    }
+  }
+  return morse
 }
 
-console.log(morse)
+console.log(wordCharToMorse('Help Me.'))
