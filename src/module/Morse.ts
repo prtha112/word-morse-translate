@@ -5,28 +5,28 @@ export class Morse {
     this.word = wordinput;
   }
 
-  public wordCharToMorse(){
-    const word: string = this.word
+  public wordCharToMorse() {
+    const word: string = this.word;
     let n: number = word.length;
-    let morse: string = ''
-    for (let i: number = 0; i < n; i++){
+    let morse: string = "";
+    for (let i: number = 0; i < n; i++) {
       if (i == n) {
-        morse = morse + this.wordToMorse(word[i]) 
-      }else{
-        morse = morse + this.wordToMorse(word[i]) + ' '
+        morse = morse + this.wordToMorse(word[i]);
+      } else {
+        morse = morse + this.wordToMorse(word[i]) + " ";
       }
     }
-    return morse
+    return morse;
   }
 
-  public morseCharToMorse(){
-    const word: string[] = this.word.split(" ")
+  public morseCharToMorse() {
+    const word: string[] = this.word.split(" ");
     let n: number = word.length;
-    let morse: string = ''
-    for (let i: number = 0; i < n; i++){
-      morse = morse + this.morseToWord(word[i]) 
+    let morse: string = "";
+    for (let i: number = 0; i < n; i++) {
+      morse = morse + this.morseToWord(word[i]);
     }
-    return morse
+    return morse;
   }
 
   private wordToMorse(word: string) {
@@ -131,10 +131,78 @@ export class Morse {
       case "-.-.":
         return "C";
         break;
+      case "-..":
+        return "D";
+        break;
+      case ".":
+        return "E";
+        break;
+      case "..-.":
+        return "F";
+        break;
+      case "--.":
+        return "G";
+        break;
+      case "....":
+        return "H";
+        break;
+      case "..":
+        return "I";
+        break;
+      case ".---":
+        return "J";
+        break;
+      case "-.-":
+        return "K";
+        break;
+      case ".-..":
+        return "L";
+        break;
+      case "--":
+        return "M";
+        break;
+      case "-.":
+        return "N";
+        break;
+      case "---":
+        return "O";
+        break;
+      case ".--.":
+        return "P";
+        break;
+      case "--.-":
+        return "Q";
+        break;
+      case ".-.":
+        return "R";
+        break;
+      case "...":
+        return "S";
+        break;
+      case "-":
+        return "T";
+        break;
+      case "..-":
+        return "U";
+        break;
+      case "...-":
+        return "V";
+        break;
+      case ".--":
+        return "W";
+        break;
+      case "-..-":
+        return "X";
+        break;
+      case "-.--":
+        return "Y";
+        break;
+      case "--..":
+        return "Z";
+        break;
       default:
         return "";
         break;
     }
   }
 }
-
