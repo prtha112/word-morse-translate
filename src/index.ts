@@ -1,5 +1,10 @@
 import { Morse } from './module/Morse';
 
-let object = new Morse('.- -... -.-.')
-console.log(object.wordCharToMorse())
-console.log(object.morseCharToMorse())
+let morse = new Morse('.- -... -.-.')
+let morseToWord: string = morse.morseCharToMorse();
+
+let word = new Morse('Hello world.')
+let wordToMorse: string = word.wordCharToMorse();
+
+console.log(morseToWord)
+console.log(wordToMorse)
