@@ -19,6 +19,16 @@ export class Morse {
     return morse
   }
 
+  public morseCharToMorse(){
+    const word: string[] = this.word.split(" ")
+    let n: number = word.length;
+    let morse: string = ''
+    for (let i: number = 0; i < n; i++){
+      morse = morse + this.morseToWord(word[i]) 
+    }
+    return morse
+  }
+
   private wordToMorse(word: string) {
     const wordChar: string = word.toUpperCase();
     switch (wordChar) {
@@ -102,6 +112,24 @@ export class Morse {
         break;
       case " ":
         return " ";
+        break;
+      default:
+        return "";
+        break;
+    }
+  }
+
+  private morseToWord(morse: string) {
+    const morseChar: string = morse.toUpperCase();
+    switch (morseChar) {
+      case ".-":
+        return "A";
+        break;
+      case "-...":
+        return "B";
+        break;
+      case "-.-.":
+        return "C";
         break;
       default:
         return "";
